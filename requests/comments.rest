@@ -1,0 +1,30 @@
+@baseUrl = http://localhost:3000/api
+@authToken = your_auth_token_here
+@postId = post_id_here
+@commentId = comment_id_here
+
+### Get all comments for a post
+GET {{baseUrl}}/posts/{{postId}}/comments
+Authorization: Bearer {{authToken}}
+
+### Create new comment
+POST {{baseUrl}}/posts/{{postId}}/comments
+Authorization: Bearer {{authToken}}
+Content-Type: application/json
+
+{
+  "content": "This is a test comment"
+}
+
+### Update comment
+PUT {{baseUrl}}/posts/{{postId}}/comments/{{commentId}}
+Authorization: Bearer {{authToken}}
+Content-Type: application/json
+
+{
+  "content": "This is an updated comment"
+}
+
+### Delete comment
+DELETE {{baseUrl}}/posts/{{postId}}/comments/{{commentId}}
+Authorization: Bearer {{authToken}} 
