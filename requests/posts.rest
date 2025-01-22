@@ -1,0 +1,35 @@
+@baseUrl = http://localhost:3000/api
+@authToken = your_auth_token_here
+@postId = post_id_here
+
+### Get all posts
+GET {{baseUrl}}/posts
+Authorization: Bearer {{authToken}}
+
+### Get post by ID
+GET {{baseUrl}}/posts/{{postId}}
+Authorization: Bearer {{authToken}}
+
+### Create new post
+POST {{baseUrl}}/posts
+Authorization: Bearer {{authToken}}
+Content-Type: application/json
+
+{
+  "title": "Test Post",
+  "content": "This is a test post content"
+}
+
+### Update post
+PUT {{baseUrl}}/posts/{{postId}}
+Authorization: Bearer {{authToken}}
+Content-Type: application/json
+
+{
+  "title": "Updated Post",
+  "content": "This is updated content"
+}
+
+### Delete post
+DELETE {{baseUrl}}/posts/{{postId}}
+Authorization: Bearer {{authToken}} 
